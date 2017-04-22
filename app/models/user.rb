@@ -13,5 +13,5 @@ class User < ApplicationRecord
    validates :email, email: true
    validates :email, uniqueness: {
      message: "An account already exists for that email address!"
-   }  
+   }
 end
