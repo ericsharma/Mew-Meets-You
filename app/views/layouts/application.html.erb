@@ -13,10 +13,43 @@
   </head>
 
   <body>
-    <div id="app">
-      Test
+    <div data-sticky-container>
+      <div class="sticky" data-sticky data-options="anchor: page; marginTop: 0; stickyOn: small;">
+        <div class="top-bar">
+          <div class="top-bar-left">
+            <ul class="menu">
+              <li class="menu-text">
+                <span style="font: 400 2.0em/100% 'Satisfy', Helvetica, Sans-serif;">
+                  <%= link_to "Mew Meets You", root_path %>
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="menu sign-up">
+              <% if user_signed_in? %>
+                <li> <%= current_user.username %> | </li>
+                <li>
+                  <%= link_to "Sign Out",
+                    destroy_user_session_path, method: :delete, class:"button"
+                  %>
+                </li>
+              <% else %>
+                <li> <%= link_to "Sign In", new_user_session_path, class:"button" %> </li>
+                <li> <%= link_to "Sign Up", new_user_registration_path, class:"button" %> </li>
+              <% end %>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </div>
 
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
 
     <%= yield %>
 

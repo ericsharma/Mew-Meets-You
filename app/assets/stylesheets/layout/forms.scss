@@ -1,0 +1,44 @@
+$white: #ffffff;
+$black: #000000;
+$grey-shadow: #837b9c;
+$form-box-grey-shadow: #393952;
+$input-background-color: rgba(255, 255, 255, 0.54);
+$low-opacity-white: rgba(255, 255, 255, 0.22);
+$text-shadow: 2px 2px 10px $black;
+
+.form-box {
+  background-color: $grey-shadow;
+  border: solid 2px $white;
+  border-color: $low-opacity-white;
+  border-radius: 6px;
+  box-shadow: 5px 5px 15px $form-box-grey-shadow;
+  margin: 2% 25%;
+  padding: 2em;
+  width: 50%;
+  input {
+    background-color: $input-background-color;
+    border-radius: 5px;
+    border-color: $low-opacity-white;
+  }
+
+  select {
+    background-color: $input-background-color;
+    border-radius: 5px;
+    border-color: $low-opacity-white;
+  }
+  .submit-container {
+    text-align: center;
+  }
+
+  #create-venue {
+    color: $black;
+    font-size: 1.5em;
+    font-weight: 400;
+    text-align: center;
+    text-shadow: $text-shadow;
+  }
+  .error {
+    font-size: .8em;
+    text-shadow: $text-shadow;
+  }
+}
