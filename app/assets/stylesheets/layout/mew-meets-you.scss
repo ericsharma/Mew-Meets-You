@@ -17,6 +17,10 @@ h1, h2, h3, h4, h5, h6 {
   border-left: 1px solid #CCCCCC;
 }
 
+.sticky {
+  width: 100%;
+}
+
 .sign-up {
   padding: 15px 20px;
 }
@@ -31,7 +35,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .poke-h {
-  font-size: 1em;
   text-decoration: underline;
   float: left;
   position: absolute;
@@ -40,7 +43,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .poke-p {
-  font-size: .8em;
   font-family: serif;
   left: 10%;
   top: 5%;
@@ -49,14 +51,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .card {
   position: absolute;
-  top: 250px;
   margin: 0 30%;
   // left: 40%;
-  width: 600px;
-  height: 600px;
+  width: 200px;
+  height: 200px;
   // margin: -150px;
   float: left;
-  perspective: 500px;
+  perspective: 200px;
   border: 1px solid black;
   box-shadow: 10px 10px 15px #888888;
   border-radius: 20px;
@@ -81,10 +82,8 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   width: 100%;
   background: white;
-  line-height: 500px;
   color: #03446A;
   text-align: center;
-  font-size: 60px;
   border-radius: 5px;
   backface-visibility: hidden;
 }

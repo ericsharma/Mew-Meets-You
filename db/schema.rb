@@ -23,10 +23,12 @@ ActiveRecord::Schema.define(version: 20170422183819) do
   end
 
   create_table "pokemons", force: :cascade do |t|
-    t.string  "name",      null: false
-    t.string  "type"
-    t.integer "weight",    null: false
-    t.string  "image_url", null: false
+    t.string   "name",       null: false
+    t.string   "type"
+    t.integer  "weight",     null: false
+    t.string   "image_url",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

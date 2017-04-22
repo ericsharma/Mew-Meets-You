@@ -39,7 +39,7 @@ class PokemonShowContainer extends Component {
         this.setState({ pokemon: responseData })
       })
   }
-  
+
 
   render() {
     let image_url = `https://raw.githubusercontent.com/kisaraofpern/official-pokemon-art/master/${this.state.number}.png`
@@ -57,6 +57,7 @@ class PokemonShowContainer extends Component {
         <input
           type="submit"
           value = "Match!"
+          class="button"
         />
       </form>
     </div>
