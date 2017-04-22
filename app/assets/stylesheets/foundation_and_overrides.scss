@@ -51,3 +51,13 @@
 //
 // @include motion-ui-transitions;
 // @include motion-ui-animations;
+
+$grey-shadow: #837b9c;
+
+.top-bar-left {
+  margin: auto;
+}
+.top-bar .top-bar-left,
+.top-bar .top-bar-right {
+    width: auto;
+}
