@@ -23,7 +23,6 @@ class PokemonShowContainer extends Component {
       image_url: image_url
     });
 
-    event.preventDefault();
     fetch(`/api/v1/matches.json`, {
       credentials: 'same-origin',
       method: 'POST',
