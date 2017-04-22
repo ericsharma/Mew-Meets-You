@@ -25,6 +25,7 @@ group :development, :test do
   gem 'shoulda-matchers', require: false
   gem 'valid_attribute'
   gem 'coveralls', require: false
+  gem 'faker'
 end
 
 group :production do
