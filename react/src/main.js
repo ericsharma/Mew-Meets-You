@@ -1,10 +1,12 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PokemonShowContainer from './containers/PokemonShowContainer';
+
 
 $(function() {
   ReactDOM.render(
-    <h1>Boo yaa</h1>,
+    <PokemonShowContainer />,
     document.getElementById('app')
   );
 });
