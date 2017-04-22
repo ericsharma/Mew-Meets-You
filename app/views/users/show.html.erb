@@ -1,27 +1,58 @@
 <div class="top">
   <h1><%= @user.username %>'s Profile</h1>
   <ul class="menu sign-up top">
-    <
     <li> <%= link_to "Sign In", new_user_session_path, class:"button" %> </li>
     <li> <%= link_to "Sign Up", new_user_registration_path, class:"button" %> </li>
+    <li>    <% if @user.avatar_url %>
+          <img src="<%= @user.avatar_url %>" />
+        <% else %>
+          <img src="http://rs732.pbsrc.com/albums/ww327/NinjaPie101/Missingno_Sprite1947934836-iaza.gif~c200" %>
+        <% end %>
+        <%= @user.email %> </li>
   </ul>
 </div>
 <div class="row">
-  <div class="columns small-4">
-    <% if @user.avatar_url %>
-      <img src="<%= @user.avatar_url %>" />
-    <% else %>
-      <img src="http://rs732.pbsrc.com/albums/ww327/NinjaPie101/Missingno_Sprite1947934836-iaza.gif~c200" %>
+  <div class="text-left">
+
+  </div>
+  <div class="columns small-11">
+    <% i = 0 %>
+    <% while i < @matches.length do %>
+
+      <div class="row text-center">
+        <div class="small-12 large-4 columns">
+          <div class="card">
+            <div class="content">
+              <div class="front">
+                <img src= '<%=@matches[i].image_url%>' height='200' width='200'/>
+
+              </div>
+              <div class='back'>
+                <h1 class='poke-h'> Name: </h1>
+                <p class='poke-p'><br /> <%= @matches[i].name %></p>
+                <h2 class='poke-h'><br /> Weight:</h2>
+                <p class= 'poke-p'><br /> <%= @matches[i].weight %></p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="small-12 large-4 columns">
+          <% if @matches[i+1] %>
+
+            <%= link_to image_tag(@matches[i+1].image_url, :alt => @matches[i+1].name, :class => "thumbnail"), user_path(@user) %>
+          <% end %>
+        </div>
+        <div class="small-12 large-4 columns">
+          <% if @matches[i+2] %>
+
+            <%= link_to image_tag(@matches[i+2].image_url, :alt => @matches[i+2].name, :class => "thumbnail"), user_path(@user) %>
+          <% end %>
+        </div>
+      </div>
+      <% i += 3 %>
     <% end %>
-    <%= @user.email %>
+
+
+
   </div>
-  <div class="columns small-4">
-    <p>Matches</p>
-    <% @matches.each do |match| %>
-      <img src="<%= match.image_url %>" />
-    <% end %>
-  </div>
-  <div class="columns small-4">
-    <p>Placeholder for Data Visualization
-  </div>
-</div>
