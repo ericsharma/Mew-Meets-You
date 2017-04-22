@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resource :home
 
-  resources :users
+  resources :users, only: [:show]
 
   devise_for :users
 
