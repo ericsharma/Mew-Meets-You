@@ -1,25 +1,24 @@
-<div class="top">
-  <h1><%= @user.username %>'s Profile</h1>
-  <ul class="menu sign-up top">
-    <
-    <li> <%= link_to "Sign In", new_user_session_path, class:"button" %> </li>
-    <li> <%= link_to "Sign Up", new_user_registration_path, class:"button" %> </li>
-  </ul>
-</div>
+<% binding.pry %>
+<h1><%= @user.username %>'s Profile</h1>
+
 <div class="row">
   <div class="columns small-4">
-    <% if @user.avatar_url %>
-      <img src="<%= @user.avatar_url %>" />
-    <% else %>
-      <img src="http://rs732.pbsrc.com/albums/ww327/NinjaPie101/Missingno_Sprite1947934836-iaza.gif~c200" %>
-    <% end %>
-    <%= @user.email %>
+
+    <ul class="menu vertical">
+      <%= link_to 'Edit Profile', edit_user_path(@user), class: "button" %></br>
+      <%= link_to "Delete Account", user_registration_path, :method => :delete, class: "button"%>
+      <li><strong>Email: </strong><%= @user.email %></li>
+      <li>
+        <% if @user.avatar_url %>
+          <img src="<%= @user.avatar_url %>" />
+        <% else %>
+          <img src="http://rs732.pbsrc.com/albums/ww327/NinjaPie101/Missingno_Sprite1947934836-iaza.gif~c200" %>
+        <% end %>
+      </li>
+    </ul>
   </div>
   <div class="columns small-4">
     <p>Matches</p>
-    <% @matches.each do |match| %>
-      <img src="<%= match.image_url %>" />
-    <% end %>
   </div>
   <div class="columns small-4">
     <p>Placeholder for Data Visualization
