@@ -3,20 +3,26 @@ import { browserHistory, Link } from 'react-router';
 
 const PokemonShow = (props) => {
   return(
-    <div className="article-show">
-    <h1> Name: {props.title}  </h1>
-    <h2> Weight: {props.weight} </h2>
-    <h5 className="text-center"> <img src={props.image} height='250' width='250'/> </h5>
-
-
+    <div>
+      <div>
+      <br /><br />
+        <h1> Pick a Pokemon! </h1>
+      </div>
+    <div className="card">
+      <div className="content">
+        <div className="front">
+          <img src={props.image} height='600' width='600'/>
+        </div>
+      <div className="back">
+        <h1 className='poke-h'> Name:</h1>
+        <p className='poke-p'><br />{props.title}</p>
+        <h2 className='poke-h'><br />Weight:</h2>
+        <p className='poke-p'><br />{props.weight}</p>
+      </div>
     </div>
+  </div>
+  </div>
   )
 }
 
 export default PokemonShow;
-// <h2>{props.title}</h2>
-// <p>{props.body}</p>
-// <img src="{props.sprite}" />
-// <div className="button">
-// <button className="round" onClick={browserHistory.goBack}>Back</button>
-// </div>
