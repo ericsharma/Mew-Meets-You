@@ -28,7 +28,6 @@
           <div class="top-bar-right">
             <ul class="menu sign-up">
               <% if user_signed_in? %>
-                <% binding.pry %>
                 <li>
                   <%= link_to current_user.username, user_path(current_user) %>
                   </li>
