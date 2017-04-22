@@ -5,7 +5,8 @@ class CreatePokemons < ActiveRecord::Migration[5.0]
       t.string :type 
       t.integer :weight, null: false
       t.string :image_url, null: false
-
+      
+      t.timestamps null:false
     end
   end
 end
