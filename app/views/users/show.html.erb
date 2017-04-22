@@ -17,6 +17,9 @@
   </div>
   <div class="columns small-4">
     <p>Matches</p>
+    <% @matches.each do |match| %>
+      <img src="<%= match.image_url %>"
+    <% end %>
   </div>
   <div class="columns small-4">
     <p>Placeholder for Data Visualization
