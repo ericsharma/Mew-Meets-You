@@ -14,4 +14,6 @@ class User < ApplicationRecord
    validates :email, uniqueness: {
      message: "An account already exists for that email address!"
    }
+   has_many :matches
+   has_many :pokemons, through: :matches
 end

@@ -6,7 +6,8 @@ const PokemonShow = (props) => {
     <div className="article-show">
     <h1> Name: {props.title}  </h1>
     <h2> Weight: {props.weight} </h2>
-    <img src={props.image}/>
+
+    <img src={props.image} height='250' width='250'/>
     </div>
   )
 }

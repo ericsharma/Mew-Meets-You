@@ -21,6 +21,7 @@ class PokemonShowContainer extends Component {
       .then(responseData => {
         this.setState({ pokemon: responseData })
 
+
       })
 
 
@@ -28,18 +29,21 @@ class PokemonShowContainer extends Component {
 
   render() {
     let image_url = `https://raw.githubusercontent.com/kisaraofpern/official-pokemon-art/master/${this.state.number}.png`
-  
+    
     return(
       <PokemonShow
         key={this.state.pokemon.id}
         id={this.state.pokemon.id}
         title={this.state.pokemon.name}
         weight={this.state.pokemon.weight}
+
+
         image= {image_url}
 
        />
 
     )
+
   }
 }
 
