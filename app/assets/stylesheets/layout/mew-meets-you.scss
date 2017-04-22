@@ -16,3 +16,86 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid #333333;
   border-left: 1px solid #CCCCCC;
 }
+
+.sign-up {
+  padding: 15px 20px;
+}
+
+.menu-text {
+  padding: 15px 0px 0px 10px;
+}
+
+.article-show {
+  text-align: center;
+  padding: 5em;
+}
+
+.poke-h {
+  font-size: 1em;
+  text-decoration: underline;
+  float: left;
+  position: absolute;
+  left: 10%;
+  display: inline;
+}
+
+.poke-p {
+  font-size: .8em;
+  font-family: serif;
+  left: 10%;
+  top: 5%;
+}
+
+
+.card {
+  position: absolute;
+  top: 250px;
+  margin: 0 30%;
+  // left: 40%;
+  width: 600px;
+  height: 600px;
+  // margin: -150px;
+  float: left;
+  perspective: 500px;
+  border: 1px solid black;
+  box-shadow: 10px 10px 15px #888888;
+  border-radius: 20px;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 15px rgba(0,0,0,.5);
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .content {
+  transform: rotateY( 180deg ) ;
+  transition: transform 1s;
+}
+
+.front,.back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: white;
+  line-height: 500px;
+  color: #03446A;
+  text-align: center;
+  font-size: 60px;
+  border-radius: 5px;
+  backface-visibility: hidden;
+}
+
+.back {
+  background: #03446A;
+  color: white;
+  transform: rotateY( 180deg );
+}
+
+.top-bar {
+  border-bottom: 1px solid rgb(127, 127, 127);
+  box-shadow: 0 0 30px rgba(0,0,0,.4);
+}
