@@ -1,6 +1,6 @@
 <h1><%= @user.username %>'s Profile</h1>
 
-<div class="row gallery">
+<div class="row" id="gallery">
   <div class="columns small-3">
     <ul class="menu vertical">
       <%= link_to 'Edit Profile', edit_user_path(@user), class: "button" %>
@@ -9,7 +9,7 @@
       <li><strong>Email: </strong><%= @user.email %></li>
       <li><strong>Avatar:</strong></li>
       <li>
-        <% if @user.avatar_url %>
+        <% if !@user.avatar_url.nil? && !@user.avatar_url.empty? %>
           <img src="<%= @user.avatar_url %>" />
         <% else %>
           <img src="http://rs732.pbsrc.com/albums/ww327/NinjaPie101/Missingno_Sprite1947934836-iaza.gif~c200" %>
@@ -43,7 +43,7 @@
             <div class="card">
               <div class="content">
                 <div class="front">
-                  <img src= '<%=@matches[i+1].image_url%>'/>
+                  <img src='<%=@matches[i+1].image_url%>'/>
                 </div>
                 <div class='back'>
                   <p class='poke-p'><strong><%= @matches[i+1].name %></strong></p>
@@ -60,7 +60,8 @@
             <div class="card">
               <div class="content">
                 <div class="front">
-                  <img src= '<%=@matches[i+2].image_url%>'/>
+                  <img src= '<%=@matches[i+2].image_url%>' width='200';
+                    height='200';/>
                 </div>
                 <div class='back'>
                   <p class='poke-p'><strong><%= @matches[i+1].name %></strong></p>

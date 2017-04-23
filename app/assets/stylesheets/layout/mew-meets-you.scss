@@ -3,6 +3,12 @@
 h1, h2, h3, h4, h5, h6 {
   font-family: Satisfy, fantasy, serif;
   text-align: center;
+  color: #393952
+}
+
+body,
+html {
+  background-color: #fffbfb;
 }
 
 .button {
@@ -65,14 +71,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #gallery .card {
-  width: 200px;
+  position: relative;
   height: 200px;
+  width: 200px;
 }
 
 #gallery .card img {
-  width: 200px;
   height: 200px;
-  position: relative;
+  width: 200px;
 }
 
 .card {
