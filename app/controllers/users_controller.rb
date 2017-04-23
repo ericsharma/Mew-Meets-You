@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user.avatar_url = params[:user][:avatar_url]
 
     if @user.save
-      flash[:notice]='Success! Your profile has been updated.'
+      flash[:notice] = 'Success! Your profile has been updated.'
       redirect_to @user
     else
       @user.email = params[:user][:email]
