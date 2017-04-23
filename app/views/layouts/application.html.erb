@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <title>Mew Meets You</title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
@@ -29,8 +29,15 @@
             <ul class="menu sign-up">
               <% if user_signed_in? %>
                 <li>
-                  <%= link_to current_user.username, user_path(current_user) %>
-                  </li>
+                  <% if !current_user.avatar_url.nil? &&   !current_user.avatar_url.empty? %>
+                    <img src="<%= current_user.avatar_url %>" />
+                  <% else %>
+                    <img src="http://rs732.pbsrc.com/albums/ww327/NinjaPie101/Missingno_Sprite1947934836-iaza.gif~c200" height="25" width="25"%>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to current_user.username, user_path(current_user)%>
+                </li>
                 <li>
                   <%= link_to "Sign Out",
                     destroy_user_session_path, method: :delete, class:"button"

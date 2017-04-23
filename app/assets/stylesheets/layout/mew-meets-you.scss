@@ -3,6 +3,12 @@
 h1, h2, h3, h4, h5, h6 {
   font-family: Satisfy, fantasy, serif;
   text-align: center;
+  color: #393952
+}
+
+body,
+html {
+  background-color: #fffbfb;
 }
 
 .button {
@@ -10,15 +16,23 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
   background-color: #EEEEEE;
   color: #333333;
-  padding: 2px 6px 2px 6px;
+  padding: 15px 20px;
   border-top: 1px solid #CCCCCC;
   border-right: 1px solid #333333;
   border-bottom: 1px solid #333333;
   border-left: 1px solid #CCCCCC;
 }
 
-.sign-up {
-  padding: 15px 20px;
+#landing_page img {
+  display:block;
+  width: 200px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sticky {
+  width: 100%;
 }
 
 .menu-text {
@@ -31,7 +45,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .poke-h {
-  font-size: 1em;
   text-decoration: underline;
   float: left;
   position: absolute;
@@ -40,30 +53,45 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .poke-p {
-  font-size: .8em;
   font-family: serif;
   left: 10%;
   top: 5%;
 }
 
+#signed_in .card {
+  position: absolute;
+  margin: 0 30%;
+  width: 400px;
+  height: 400px;
+}
+
+#signed_in img {
+  width: 400px;
+  height: 400px;
+}
+
+#gallery .card {
+  position: relative;
+  height: 200px;
+  width: 200px;
+}
+
+#gallery .card img {
+  height: 200px;
+  width: 200px;
+}
 
 .card {
-  position: absolute;
-  top: 250px;
-  margin: 0 30%;
   // left: 40%;
-  width: 600px;
-  height: 600px;
   // margin: -150px;
   float: left;
-  perspective: 500px;
+  perspective: 200px;
   border: 1px solid black;
   box-shadow: 10px 10px 15px #888888;
   border-radius: 20px;
 }
 
 .content {
-  position: absolute;
   width: 100%;
   height: 100%;
   box-shadow: 0 0 15px rgba(0,0,0,.5);
@@ -81,10 +109,8 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   width: 100%;
   background: white;
-  line-height: 500px;
   color: #03446A;
   text-align: center;
-  font-size: 60px;
   border-radius: 5px;
   backface-visibility: hidden;
 }
@@ -98,4 +124,22 @@ h1, h2, h3, h4, h5, h6 {
 .top-bar {
   border-bottom: 1px solid rgb(127, 127, 127);
   box-shadow: 0 0 30px rgba(0,0,0,.4);
+}
+
+#tinderContainer {
+  position: relative;
+  height: 1em;
+}
+
+#tinderButtons {
+  position: absolute;
+  bottom: 0;
+}
+
+#left-swipe {
+  float: left;
+}
+
+#right-swipe {
+  float: right;
 }

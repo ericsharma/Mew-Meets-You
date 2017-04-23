@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
-  get 'users/:id' => 'users#show', as: :user
-
   root "home#index"
 
-  resource :home
-  resources :users, only: [:show]
+  devise_for :users
 
   namespace :api do
     namespace :v1 do
@@ -13,4 +9,5 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :users, only: [:show, :edit, :update]
 end

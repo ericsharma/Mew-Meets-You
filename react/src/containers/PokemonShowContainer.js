@@ -39,27 +39,30 @@ class PokemonShowContainer extends Component {
         this.setState({ pokemon: responseData })
       })
   }
-  
+
 
   render() {
     let image_url = `https://raw.githubusercontent.com/kisaraofpern/official-pokemon-art/master/${this.state.number}.png`
 
     return(
-      <div>
+      <div id="tinderContainer">
         <PokemonShow
           key={this.state.pokemon.id}
           id={this.state.pokemon.id}
           title={this.state.pokemon.name}
           weight={this.state.pokemon.weight}
           image= {image_url}
-         />
-       <form onSubmit={this.onRightSwipe}>
-        <input
-          type="submit"
-          value = "Match!"
         />
-      </form>
-    </div>
+        <form onSubmit={this.onRightSwipe}>
+          <a href="/" className="button" id="left-swipe">Ew! No.</a>
+          <input
+            type="submit"
+            value = "Hells yeeeeah."
+            className="button"
+            id="right-swipe"
+          />
+        </form>
+      </div>
     )
 
   }
