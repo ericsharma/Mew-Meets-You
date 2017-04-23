@@ -1,8 +1,14 @@
-<h1>Pick a Pokemon!</h1>
 <div class="row">
-  <div class="columns small-4">
-    <%= link_to "Reject", root_path, class: "button" %>
-    <div class="columns small-8" id="app">
+  <% if current_user %>
+    <div id="signed_in">
+      <h1>Like Me?</h1>
+      <div id="app">
+      </div>
     </div>
-  </div>
+  <% else %>
+    <div id ="landing_page">
+      <h1>A World Beckons...</h1>
+      <img src="https://pldh.net/media/pokemon/ken_sugimori/20th_anniversary/151.png" />
+    </div>
+  <% end %>
 </div>

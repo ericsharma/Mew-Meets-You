@@ -1,12 +1,13 @@
 <h1><%= @user.username %>'s Profile</h1>
 
-<div class="row">
-  <div class="columns small-1">
-
+<div class="row gallery">
+  <div class="columns small-3">
     <ul class="menu vertical">
-      <%= link_to 'Edit Profile', edit_user_path(@user), class: "button" %></br>
+      <%= link_to 'Edit Profile', edit_user_path(@user), class: "button" %>
       <%= link_to "Delete Account", user_registration_path, :method => :delete, class: "button"%>
+      <li><strong><span style="font-size:200%">Profile Settings</span></strong></li>
       <li><strong>Email: </strong><%= @user.email %></li>
+      <li><strong>Avatar:</strong></li>
       <li>
         <% if @user.avatar_url %>
           <img src="<%= @user.avatar_url %>" />
@@ -16,41 +17,63 @@
       </li>
     </ul>
   </div>
-  <div class="columns small-11">
+  <div class="columns small-9">
     <% i = 0 %>
     <% while i < @matches.length do %>
-
       <div class="row text-center">
-        <div class="small-12 large-4 columns">
-          <div class="card">exit
-            <div class="content">
-              <div class="front">
-                <img src= '<%=@matches[i].image_url%>' height='200' width='200'/>
-
-              </div>
-              <div class='back'>
-                <h1 class='poke-h'> Name: </h1>
-                <p class='poke-p'><br /> <%= @matches[i].name %></p>
-                <h2 class='poke-h'><br /> Weight:</h2>
-                <p class= 'poke-p'><br /> <%= @matches[i].weight %></p>
-
+        <% if @matches[i] %>
+          <div class="small-12 large-4 columns">
+            <div class="card">
+              <div class="content">
+                <div class="front">
+                  <img src= '<%=@matches[i].image_url%>'/>
+                </div>
+                <div class='back'>
+                  <p class='poke-p'><strong><%= @matches[i].name %></strong></p>
+                  <p><span class='poke-h'>Weight:</span><span><class='poke-p'><%= @matches[i].weight %></p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="small-12 large-4 columns">
-          <% if @matches[i+1] %>
-
-            <%= link_to image_tag(@matches[i+1].image_url, :alt => @matches[i+1].name, :class => "thumbnail"), user_path(@user) %>
-          <% end %>
-        </div>
-        <div class="small-12 large-4 columns">
-          <% if @matches[i+2] %>
-
-            <%= link_to image_tag(@matches[i+2].image_url, :alt => @matches[i+2].name, :class => "thumbnail"), user_path(@user) %>
-          <% end %>
-        </div>
+        <% else %>
+          <div style="height:1em;"></div>
+        <% end %>
+        <% if @matches[i+1] %>
+          <div class="small-12 large-4 columns">
+            <div class="card">
+              <div class="content">
+                <div class="front">
+                  <img src= '<%=@matches[i+1].image_url%>'/>
+                </div>
+                <div class='back'>
+                  <p class='poke-p'><strong><%= @matches[i+1].name %></strong></p>
+                  <p><span class='poke-h'>Weight:</span><span><class='poke-p'><%= @matches[i+1].weight %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% else %>
+          <div style="height:1em"></div>
+        <% end %>
+        <% if @matches[i+2] %>
+          <div class="small-12 large-4 columns">
+            <div class="card">
+              <div class="content">
+                <div class="front">
+                  <img src= '<%=@matches[i+2].image_url%>'/>
+                </div>
+                <div class='back'>
+                  <p class='poke-p'><strong><%= @matches[i+1].name %></strong></p>
+                  <p><span class='poke-h'>Weight:</span><span><class='poke-p'><%= @matches[i+1].weight %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% else %>
+          <div style="height:1em"></div>
+        <% end %>
       </div>
       <% i += 3 %>
     <% end %>
   </div>
+</div>
